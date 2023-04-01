@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+body {
+    background-color: #161515;
+    display: grid;
+    grid-template-areas: "weather tab tab tab tab tab tab tab"
+                         "weather heading heading heading heading heading heading heading"
+                         "weather main main main main main control control"
+                         "weather main main main main main control control"
+                         "weather main main main main main control control"
+                         "weather main main main main main control control"
+                         "weather main main main main main control control"
+                         "weather main main main main main control control"
+                         "weather main main main main main control control";
+}
+
+.weather-block {
+    grid-area: weather;
+    font-family: 'Unica One', cursive;
+    text-align: center;
+    height: 100%;
+    border-right: 1px solid #3D3939;
+}
+
+.tab-block {
+    grid-area: tab;
+    border-bottom: 1px solid #3D3939;
+}
+
+.heading {
+    grid-area: heading;
+    border-bottom: 1px solid #3D3939;
+}
+
+.main-block {
+    grid-area: main;
+    border-right: 1px solid #3D3939;
+}
+
+.control-block {
+    grid-area: control;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.control-block button {
+    color: #fff;
+    background-color: #312f2f;
+    outline: none;
+    border-radius: 5px;
+    padding: 15px 12px;
+    margin: auto;
+    border: none;
+    cursor: pointer;
+    width: 10vw;
+}
+
+.time {
+    color: #fff;
+    padding: 100px 0 15px 0;
+    font-size: 2.5rem;
+}
+
+.date {
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 0 0 50px 0;
+}
+.weather-data {
+    padding: 0 0 40px 0;
+}
+.todo-img {
+    width: 200px;
+    height: 177.61px;
+}

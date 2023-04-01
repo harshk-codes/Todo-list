@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Unica+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>TODO</title>
+</head>
+
+<body>
+    <div class="weather-block">
+        <div class="time" id="time"></div>
+        <div class="date"></div>
+        <div class="weather">
+            <div class="weather-data">Weather data</div>
+            <div><img class="todo-img" src="/images/checklist.png"></div>
+        </div>
+    </div>
+    <div class="tab-block">This is tab block</div>
+    <div class="heading">This is heading block</div>
+    <div class="main-block">This is main block</div>
+    <div class="control-block">
+        <button class="btn1">Clear all</button>
+        <button class="btn1">New tab</button>
+        <button class="btn1">btn3</button>
+    </div>
+    <script type="text/html" src="/src/index.js"></script>
+    <script>
+        //Creating time logic
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+
+        currentTime = () => {
+            let date = new Date();
+            let h = date.getHours();
+            let m = date.getMinutes();
+            let session = 'AM';
+
+            if (h == 0) {
+                h = 12;
+            }
+            if (h > 12) {
+                h = h - 12;
+                session = 'PM';
+            }
+
+            //using template literals
+            h = (h < 10) ? "0" + h : h;
+            m = (m < 10) ? "0" + m : m;
+
+            let time = h + ":" + m + " " + session;
+
+            //displaying on the div element
+            document.getElementById("time").innerText = time;
+
+            let t = setTimeout(() => { currentTime() }, 1000);
+        }
+        currentTime();
+
+        const d = new Date();
+        let month = months[d.getMonth()];
+        let day = days[d.getDay()];
+        let date = d.getDate();
+        let year = d.getFullYear();
+        let full_date = day + ", " + date + " " + month + " " + year;
+        document.querySelector(".date").innerText = full_date;
+    </script>
+</body>
+</html>
